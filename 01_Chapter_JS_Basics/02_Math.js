@@ -1,4 +1,11 @@
 console.log(2+2);
 console.log(4%2);
 console.log(10/5);
-
+console.log(2*3);
+console.log(5**2);
+console.log(Math.sqrt(25));
+console.log(Math.max(10, 20));
+console.log(Math.min(10, 20));
+console.log(Math.round(5.5));
+console.log(Math.floor(5.9));
+console.log(Math.ceil(5.1));
