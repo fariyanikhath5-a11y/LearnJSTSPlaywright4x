@@ -1,10 +1,10 @@
-// This is sinle comment this will be ignore 
+// This is single comment this will be ignore 
 // this line will be not executed
 
 /*
  *  This is multi line
- *  Author : Prrmmod Dutta
- *  Date : 11-Jul-2026
+ *  Author : Fariya Nik
+ *  Date : 08-Oct-2026
  */
 
 

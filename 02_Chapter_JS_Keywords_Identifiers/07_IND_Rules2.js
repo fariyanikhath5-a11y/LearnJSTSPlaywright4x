@@ -1,9 +1,9 @@
-var name = "Pramod";
+var name = "Fari";
 
-var firstName = "Pramod";
-var This_is_a_very_long_name_variable = "Pramod";
+var firstName = "Fariya";
+var This_is_a_very_long_name_variable = "Fariya";
 
-var lastName = "Dutta"; // CamelCase
+var lastName = "Nik"; // CamelCase
 
 // Naming Conventions (Cases)
 // ============================================
