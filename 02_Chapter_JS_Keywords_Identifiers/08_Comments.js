@@ -10,8 +10,8 @@
 
 /**
  *  This is multi line
- *  Author : Prrmmod Dutta
- *  Date : 14-Feb-2026
+ *  Author : Fariya Nikhath
+ *  Date : 08-Oct-2026
  **/
 
 var g = 10; // cmd + /, ctr + /
