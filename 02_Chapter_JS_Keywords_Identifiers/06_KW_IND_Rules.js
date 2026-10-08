@@ -17,5 +17,5 @@ var name = "Amit";
 var fari_nik = "hello";
 var fari$nik = "hello";
 var fariy1232 = "hello";
-
-// var fariya nik = "hello";
+console.log(fari_nik)
+//var fariya nik = "hello";
