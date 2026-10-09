@@ -18,11 +18,11 @@ let floatLiteral = 3.14; // Float literal
 
 
 // typeof operator is used to check the type of the variable . It will tell you the data type of the variable. For example, if you want to check the data type of the variable 'age', you can use the typeof operator like this:
-console.log(typeof age);
-console.log(typeof age1);
-console.log(typeof isStudent);
-console.log(typeof pi);
-console.log(typeof nullValue);
-console.log(typeof undefinedValue);
-console.log(typeof decimalLiteral);
-console.log(typeof floatLiteral);   
+console.log(typeof age); // string
+console.log(typeof age1); // string
+console.log(typeof isStudent); // boolean
+console.log(typeof pi); // number
+console.log(typeof nullValue); // object
+console.log(typeof undefinedValue); // undefined
+console.log(typeof decimalLiteral); // number
+console.log(typeof floatLiteral);  // number 
