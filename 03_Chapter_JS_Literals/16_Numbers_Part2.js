@@ -28,8 +28,10 @@ Position 4	0	\(2^4 = 16\)	\(0 \times 16\)	0
 Position 3	1	\(2^3 = 8\)	\(1 \times 8\)	8
 Position 2	0	\(2^2 = 4\)	\(0 \times 4\)	0
 Position 1	1	\(2^1 = 2\)	\(1 \times 2\)	2
-Position 0	0	\(2^0 = 1\)	\(0 \times 1\)	0 */
-
+Position 0	0	\(2^0 = 1\)	\(0 \times 1\)	0 
+Now, add all the non-zero contributions together:
+\(\text{Total}=128+0+32+0+8+0+2+0=170\)
+*/
 
 let hexseparator = 0xFF_FF_FF; // Numeric separator in hexadecimal
 console.log("Hexadecimal with Numeric Separator 0xFF_FF_FF:", hexseparator); // Output: 16777215
