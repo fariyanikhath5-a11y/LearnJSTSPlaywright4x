@@ -4,6 +4,11 @@
 //}
 
 //a=1;
-for(let sim=0;sim>=1;++sim){
-    console.log(sim);
-}
+//for(let sim=0;sim>=1;++sim){
+    //console.log(sim); // no output
+//}
+
+
+// for (let pramod = 0; pramod > 1; pramod++) {
+//     console.log(pramod);
+// }
