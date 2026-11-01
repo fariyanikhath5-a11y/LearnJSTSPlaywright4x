@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding the ELI5 Skill Setup Commands</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, sans-serif;
+      color: #24292f;
+      background: #f6f8fa;
+    }
+
+    body {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      line-height: 1.25;
+    }
+
+    code, pre {
+      font-family: Consolas, monospace;
+    }
+
+    code {
+      background: #eaeef2;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 16px;
+      background: #161b22;
+      color: #f0f6fc;
+      border-radius: 8px;
+    }
+
+    pre code {
+      padding: 0;
+      background: transparent;
+      color: inherit;
+    }
+
+    .diagram {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .node {
+      min-height: 125px;
+      padding: 16px;
+      border: 1px solid #d0d7de;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 2px 6px #1f23280d;
+    }
+
+    .node strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .arrow {
+      color: #0969da;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .note {
+      padding: 14px 16px;
+      border-left: 4px solid #bf8700;
+      background: #fff8c5;
+    }
+
+    .platform {
+      padding: 14px 16px;
+      border-left: 4px solid #0969da;
+      background: #ddf4ff;
+    }
+
+    @media (max-width: 700px) {
+      .diagram {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+        justify-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Understanding the ELI5 Skill Setup Commands</h1>
+    <p>
+      These commands download the ELI5 repository from GitHub, then copy its
+      <code>eli5</code> skill folder into Claude Code's user-level skills
+      directory.
+    </p>
+
+    <h2>The commands</h2>
+    <pre><code>git clone https://github.com/DreambigOu/ELI5.git
+cp -r ELI5/skills/eli5 ~/.claude/skills/eli5</code></pre>
+
+    <h2>Diagram: from GitHub to Claude Code</h2>
+    <div class="diagram" role="img" aria-label="GitHub ELI5 repository is cloned locally, then its skills slash eli5 folder is copied to the Claude user skills directory">
+      <div class="node">
+        <strong>1. GitHub repository</strong>
+        <code>DreambigOu/ELI5</code>
+        <p>The remote project containing the skill files.</p>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node">
+        <strong>2. Local clone</strong>
+        <code>./ELI5/</code>
+        <p><code>git clone</code> downloads the repository into this folder.</p>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node">
+        <strong>3. Claude skills folder</strong>
+        <code>~/.claude/skills/eli5/</code>
+        <p>The copied skill is placed here for Claude Code to discover.</p>
+      </div>
+    </div>
+
+    <h2>What each command does</h2>
+    <ol>
+      <li>
+        <code>git clone https://github.com/DreambigOu/ELI5.git</code>
+        downloads the repository into a new local folder named
+        <code>ELI5</code> in your current directory.
+      </li>
+      <li>
+        <code>cp -r</code> means “copy recursively,” so it copies the source
+        directory and its contents, including nested files and folders.
+      </li>
+      <li>
+        <code>ELI5/skills/eli5</code> is the source skill directory inside the
+        cloned repository.
+      </li>
+      <li>
+        <code>~/.claude/skills/eli5</code> is the destination. The
+        <code>~</code> represents your home directory; <code>.claude</code> is
+        Claude Code's user configuration folder.
+      </li>
+    </ol>
+
+    <h2>Before running the copy command</h2>
+    <p class="note">
+      Run the commands from the same directory where you want the
+      <code>ELI5</code> clone created. The destination's parent folder
+      <code>~/.claude/skills</code> must already exist, or the copy command
+      will fail.
+    </p>
+
+    <h2>Windows PowerShell equivalent</h2>
+    <p>
+      The shown <code>cp -r</code> syntax is intended for macOS/Linux shells.
+      In PowerShell, create the destination directory if needed, then copy the
+      skill folder like this:
+    </p>
+    <pre><code>git clone https://github.com/DreambigOu/ELI5.git
+New-Item -ItemType Directory -Force "$HOME\.claude\skills" | Out-Null
+Copy-Item -Recurse "ELI5\skills\eli5" "$HOME\.claude\skills\eli5"</code></pre>
+
+    <p class="platform">
+      After copying, the skill's files should be inside
+      <code>$HOME\.claude\skills\eli5</code>. This lesson explains the commands;
+      it does not run them.
+    </p>
+  </main>
+</body>
+</html>
