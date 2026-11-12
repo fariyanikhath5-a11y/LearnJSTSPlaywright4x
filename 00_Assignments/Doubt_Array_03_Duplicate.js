@@ -74,3 +74,30 @@ if (duplicates.length === 0) {
 } else {
     console.log(duplicates.join(" "));
 } */
+
+    /* editor : 
+    const data = require('fs').readFileSync(0, 'utf8');
+//const tokens = data.split(/\s + /).filter(s => s.length > 0).map(Number);
+const tokens = data.split(/\s+/).filter(s => s.length > 0).map(Number);
+const n = tokens[0];
+const arr = tokens.slice(1, 1 + n);
+
+// Write your solution here
+let duplicates = [];
+
+for (let i = 0; i < n; i++) {
+    for (let j = 0; j < i; j++) {
+        if (arr[i] === arr[j]) {
+            duplicates.push(arr[i]);
+            break;
+        }
+    }
+}
+
+if (duplicates.length === 0) {
+    console.log("No duplicates found");
+    console.log("All elements are unique");
+} else {
+    //console.log(duplicates.join(" "));
+    duplicates.forEach(d => console.log(d));
+} */
