@@ -1,0 +1,75 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R /F2 6 0 R /F3 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 3234 >>
+stream
+BT /F2 23 Tf 0.090 0.212 0.365 rg 1 0 0 1 50 746 Tm (Default vs. Named Exports) Tj ET
+BT /F1 10 Tf 0.412 0.412 0.412 rg 1 0 0 1 50 725 Tm (A little guide to the functions in Logger.js) Tj ET
+BT /F1 11 Tf 0.176 0.204 0.235 rg 1 0 0 1 50 701 Tm (Imagine Logger.js is a toy box. Exports are things inside it that another file can) Tj ET
+BT /F1 11 Tf 0.176 0.204 0.235 rg 1 0 0 1 50 688 Tm (borrow.) Tj ET
+BT /F2 12 Tf 0.000 0.412 0.471 rg 1 0 0 1 50 665 Tm (DEFAULT EXPORT = THE MAIN TOY) Tj ET
+0.000 0.412 0.471 RG 0.7 w 50 660 m 562 660 l S
+BT /F1 10 Tf 0.176 0.204 0.235 rg 1 0 0 1 50 645 Tm (Logger.js has one default export: the log function. It is the box's main toy, and) Tj ET
+BT /F1 10 Tf 0.176 0.204 0.235 rg 1 0 0 1 50 632 Tm (another file can give it a local name of its choice.) Tj ET
+BT /F3 10 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 612 Tm (import myLog from "./Logger.js";) Tj ET
+BT /F1 9 Tf 0.353 0.353 0.353 rg 1 0 0 1 50 593 Tm (No braces are needed. Here, myLog is the local name for log.) Tj ET
+BT /F2 12 Tf 0.000 0.412 0.471 rg 1 0 0 1 50 564 Tm (NAMED EXPORTS = TOYS WITH LABELS) Tj ET
+0.000 0.412 0.471 RG 0.7 w 50 559 m 562 559 l S
+BT /F1 10 Tf 0.176 0.204 0.235 rg 1 0 0 1 50 544 Tm (Named exports have labels. This file names two more functions: logBetter and logBetter2.) Tj ET
+BT /F1 10 Tf 0.176 0.204 0.235 rg 1 0 0 1 50 531 Tm (Ask for their exact names inside braces.) Tj ET
+BT /F3 10 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 511 Tm (import { logBetter, logBetter2 } from "./Logger.js";) Tj ET
+BT /F1 9 Tf 0.353 0.353 0.353 rg 1 0 0 1 50 492 Tm (You can rename one locally with as, like { logBetter as neatLog }.) Tj ET
+BT /F2 12 Tf 0.000 0.412 0.471 rg 1 0 0 1 50 463 Tm (YOU CAN USE BOTH) Tj ET
+0.000 0.412 0.471 RG 0.7 w 50 458 m 562 458 l S
+BT /F1 10 Tf 0.176 0.204 0.235 rg 1 0 0 1 50 443 Tm (A file can have one default export and multiple named exports. Import the default first,) Tj ET
+BT /F1 10 Tf 0.176 0.204 0.235 rg 1 0 0 1 50 430 Tm (then the named functions in braces:) Tj ET
+BT /F3 10 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 410 Tm (import myLog, { logBetter, logBetter2 } from "./Logger.js";) Tj ET
+BT /F3 10 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 394 Tm (myLog\("Hello"\);) Tj ET
+BT /F3 10 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 378 Tm (logBetter\("Saved"\);) Tj ET
+BT /F3 10 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 362 Tm (logBetter2\("Done"\);) Tj ET
+BT /F2 12 Tf 0.000 0.412 0.471 rg 1 0 0 1 50 337 Tm (OUTPUT) Tj ET
+0.000 0.412 0.471 RG 0.7 w 50 332 m 562 332 l S
+BT /F3 9 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 317 Tm ([LOG]Hello) Tj ET
+BT /F3 9 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 304 Tm (-----------) Tj ET
+BT /F3 9 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 291 Tm ([LOGS] Saved) Tj ET
+BT /F3 9 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 278 Tm (-----------) Tj ET
+BT /F3 9 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 265 Tm (-----------) Tj ET
+BT /F3 9 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 252 Tm ([LOGS]Done) Tj ET
+BT /F3 9 Tf 0.196 0.196 0.196 rg 1 0 0 1 60 239 Tm (-----------) Tj ET
+BT /F1 10 Tf 0.090 0.212 0.365 rg 1 0 0 1 50 211 Tm (Remember: default = no braces, and you choose its local name. Named = braces, and you) Tj ET
+BT /F1 10 Tf 0.090 0.212 0.365 rg 1 0 0 1 50 198 Tm (use the exported name \(or rename it with as\).) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000267 00000 n 
+0000003553 00000 n 
+0000003650 00000 n 
+0000003752 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+3847
+%%EOF
