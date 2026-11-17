@@ -1,0 +1,140 @@
+class TestResult {
+  // Static variables belong to the class and are shared across all objects
+  static totalDuration = 0;
+  static maxDuration = -1;
+  static slowestTest = '';
+
+  constructor(name, duration) {
+    this.name = name;
+    this.duration = duration;
+
+    // Add this test's time to the shared total
+    TestResult.totalDuration += duration;
+
+    // Check if this test is slower than the current slowest test
+    if (duration > TestResult.maxDuration) {
+      TestResult.maxDuration = duration;
+      TestResult.slowestTest = name;
+    }
+  }
+}
+// Create test objects directly (easy to test and edit in VS Code)
+const test1 = new TestResult('loginTest', 1200);
+const test2 = new TestResult('checkoutTest', 3400);
+const test3 = new TestResult('searchTest', 800);
+
+// Print the final results using the static variables
+console.log(`Total: ${TestResult.totalDuration} ms`);
+console.log(`Slowest: ${TestResult.slowestTest}`); //o/p:Total: 5400 ms
+//Slowest: checkoutTest
+
+/*In order to create objects you can use below code. Here /\s/ will split based on space.
+ Then you can write logic of TestResults class.
+// Create an object for each test
+for (let i = 1; i <= n; i++) {
+    const [name, millis] = lines[i].split(/\s/);
+    const test = new TestResults(name, Number(millis));
+}*/
+
+/* Editor without class and objects :
+const input = require('fs').readFileSync(0, 'utf8');
+const lines = input.trim().split('\n');
+const n = parseInt(lines[0], 10);
+// Write your solution here (each line is: name millis)
+
+let totalDuration = 0;
+let slowestTest = '';
+let maxDuration = -1;
+
+for (let i = 1; i <= n; i++) {
+    const parts = lines[i].trim().split(/\s+/);
+    const name = parts[0];
+    const millis = parseInt(parts[1], 10);
+
+    totalDuration += millis;
+
+    if (millis > maxDuration) {
+        maxDuration = millis;
+        slowestTest = name;
+    }
+}
+
+console.log(`Total: ${totalDuration} ms`);
+console.log(`Slowest: ${slowestTest}`); 
+
+---------------------------------------------------------- 
+using class ,objects and static variables:
+
+const input = require('fs').readFileSync(0, 'utf8');
+const lines = input.trim().split('\n');
+const n = parseInt(lines[0], 10);
+// Write your solution here (each line is: name millis)
+
+class TestResult {
+    static totalDuration = 0;
+    static maxDuration = -1;
+    static slowestTest = '';
+
+    constructor(name, duration) {
+        this.name = name;
+        this.duration = duration;
+
+        // Update static properties whenever a new test object is created
+        TestResult.totalDuration += this.duration;
+
+        if (this.duration > TestResult.maxDuration) {
+            TestResult.maxDuration = this.duration;
+            TestResult.slowestTest = this.name;
+        }
+    }
+
+    static printSummary() {
+        console.log(`Total: ${TestResult.totalDuration} ms`);
+        console.log(`Slowest: ${TestResult.slowestTest}`);
+    }
+}
+
+for (let i = 1; i <= n; i++) {
+    const parts = lines[i].trim().split(/\s+/);
+    const name = parts[0];
+    const millis = parseInt(parts[1], 10);
+
+    new TestResult(name, millis);
+}
+
+TestResult.printSummary(); */
+
+/*-------------------------------------------------------------
+Editor: using object creation by meethi:
+
+// Create an object for each test,In order to create objects you can use below code. 
+// Here /\s/ will split based on space. Then you can write logic of TestResults class.
+const input = require('fs').readFileSync(0, 'utf8');
+const lines = input.trim().split('\n');
+const n = parseInt(lines[0], 10);
+
+// Write your solution here (each line is: name millis)
+class TestResults {
+    static totalDuration = 0;
+    static slowestMillis = -1;
+    static slowestName = '';
+
+    constructor(name, millis) {
+        this.name = name;
+        this.millis = millis;
+
+        TestResults.totalDuration += this.millis;
+
+        if (this.millis > TestResults.slowestMillis) {
+            TestResults.slowestMillis = this.millis;
+            TestResults.slowestName = this.name;
+        }
+    }
+}
+for (let i = 1; i <= n; i++) {
+    const [name, millis] = lines[i].trim().split(/\s+/);
+    const test = new TestResults(name, Number(millis));
+}
+
+console.log(`Total: ${TestResults.totalDuration} ms`);
+console.log(`Slowest: ${TestResults.slowestName}`); */
